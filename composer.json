@@ -1,11 +1,10 @@
 {
-    "name": "yourvendor/mautic-altcha-bundle",
+    "name": "tvalimaa/mautic-altcha-bundle",
     "description": "Self-hosted, privacy-friendly ALTCHA (proof-of-work CAPTCHA) integration for Mautic forms.",
     "type": "mautic-plugin",
     "license": "GPL-3.0-only",
     "authors": [{
-        "name": "Your Name / Company",
-        "email": "support@example.com"
+        "name": "Tuomas Välimaa"
     }],
     "keywords": [
         "mautic",
