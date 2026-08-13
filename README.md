@@ -46,7 +46,7 @@ If you fill in **both**, this plugin prefers Sentinel.
    (so the path is `plugins/MauticAltchaBundle/...`), **or** publish it as a
    Composer package and run:
    ```
-   composer require yourvendor/mautic-altcha-bundle
+   composer require tvalimaa/mautic-altcha-bundle
    ```
 2. Make sure `altcha-org/altcha` (^2.0) is installed - it's declared as a
    dependency in `composer.json`, so a plain `composer install` inside your
