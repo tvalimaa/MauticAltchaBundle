@@ -156,11 +156,17 @@ Variables
            manipulation, so we use a plain script to programmatically create
            module script elements instead. The i18n bundle must be appended
            first so it runs before the widget script. #}
+        {# The i18n bundle must be fully loaded before the widget script runs,
+           so we chain: only append the widget script in the i18n onload
+           callback. Both are created as type=module because Mautic's
+           generate.js strips the type attribute from <script> tags. #}
         <script>
         (function(){
-            function addModule(src){var s=document.createElement('script');s.type='module';s.src=src;document.head.appendChild(s);}
-            addModule('https://cdn.jsdelivr.net/npm/altcha@latest/dist_i18n/all.min.js');
-            addModule('https://cdn.jsdelivr.net/npm/altcha@latest/dist/altcha.min.js');
+            var i=document.createElement('script');
+            i.type='module';
+            i.src='https://cdn.jsdelivr.net/npm/altcha@latest/dist_i18n/all.min.js';
+            i.onload=function(){var w=document.createElement('script');w.type='module';w.src='https://cdn.jsdelivr.net/npm/altcha@latest/dist/altcha.min.js';document.head.appendChild(w);};
+            document.head.appendChild(i);
         })();
         </script>
 
